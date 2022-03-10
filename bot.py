@@ -137,7 +137,7 @@ async def get_results(query, a):
         t = buts
         buts = []
         for i in t:
-            if not len(buts) > 100:
+            if len(buts) <= 100:
                 buts.append(i)
     return await a.edit(
         "Found {} reults for {}!".format(len(buts), query), buttons=buts
